@@ -24,14 +24,14 @@ import {
 
 const SIDEBAR_MENU = [
   { key: '/', icon: <DashboardOutlined />, title: 'Home' },
-  { key: '/lead', icon: <UserAddOutlined />, title: 'Clients' },
+  { key: '/lead', icon: <UserAddOutlined />, title: 'Leads' },
   { key: '/offer', icon: <FileOutlined />, title: 'Documents' },
   { key: '/customer', icon: <CustomerServiceOutlined />, title: 'Customer' },
   { key: '/invoice', icon: <FileTextOutlined />, title: 'Reminders' },
   { key: '/quote', icon: <FileSyncOutlined />, title: 'User Management' },
   { key: '/payment/invoice', icon: <CreditCardOutlined />, title: 'Reports' },
   { key: '/employee', icon: <UserOutlined />, title: 'Tools' },
-  { key: '/admin', icon: <TeamOutlined />, title: 'Admin' },
+  { key: '/admin', icon: <TeamOutlined />, title: 'Users' },
   { key: '/', icon: <DashboardOutlined />, title: 'Integrations' },
 ];
 

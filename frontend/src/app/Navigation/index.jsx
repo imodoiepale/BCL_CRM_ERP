@@ -21,26 +21,37 @@ import {
   FileOutlined,
 } from '@ant-design/icons';
 
+
 const SIDEBAR_MENU = [
-  { key: '/', icon: <DashboardOutlined />, title: 'Dashboard' },
-  { key: '/lead', icon: <UserAddOutlined />, title: 'Lead' },
-  { key: '/offer', icon: <FileOutlined />, title: 'Offer' },
+  { key: '/', icon: <DashboardOutlined />, title: 'Home' },
+  { key: '/lead', icon: <UserAddOutlined />, title: 'Clients' },
+  { key: '/offer', icon: <FileOutlined />, title: 'Documents' },
   { key: '/customer', icon: <CustomerServiceOutlined />, title: 'Customer' },
-  { key: '/invoice', icon: <FileTextOutlined />, title: 'Invoice' },
-  { key: '/quote', icon: <FileSyncOutlined />, title: 'Quote' },
-  { key: '/payment/invoice', icon: <CreditCardOutlined />, title: 'Payment Invoice' },
-  { key: '/employee', icon: <UserOutlined />, title: 'Employee' },
+  { key: '/invoice', icon: <FileTextOutlined />, title: 'Reminders' },
+  { key: '/quote', icon: <FileSyncOutlined />, title: 'User Management' },
+  { key: '/payment/invoice', icon: <CreditCardOutlined />, title: 'Reports' },
+  { key: '/employee', icon: <UserOutlined />, title: 'Tools' },
   { key: '/admin', icon: <TeamOutlined />, title: 'Admin' },
+  { key: '/', icon: <DashboardOutlined />, title: 'Integrations' },
+];
+
+const CLIENTS_SUBMENU = [
+  { key: '/settings', title: 'Accounting Clients' },
+
+  { key: '/email', title: 'Immigration Clients' },
+
+  { key: '/payment/mode', title: 'Search and Filter' },
 ];
 
 const SETTINGS_SUBMENU = [
   { key: '/settings', title: 'General Settings' },
 
-  { key: '/email', title: 'Email templates' },
+  { key: '/email', title: 'Profile Management' },
 
-  { key: '/payment/mode', title: 'Payment Mode' },
+  { key: '/payment/mode', title: 'Application Settings' },
   { key: '/settings/advanced', title: 'Advanced Settings' },
 ];
+
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -112,6 +123,14 @@ function Sidebar({ collapsible }) {
           ))}
           <SubMenu key={'Settings'} icon={<SettingOutlined />} title={'Settings'}>
             {SETTINGS_SUBMENU.map((menuItem) => (
+              <Menu.Item key={menuItem.key}>
+                <Link to={menuItem.key} />
+                {menuItem.title}
+              </Menu.Item>
+            ))}
+          </SubMenu>
+          <SubMenu key={'Lead'} icon={<SettingOutlined />} title={'Clients'}>
+            {CLIENTS_SUBMENU.map((menuItem) => (
               <Menu.Item key={menuItem.key}>
                 <Link to={menuItem.key} />
                 {menuItem.title}
